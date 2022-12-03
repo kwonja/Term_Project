@@ -7,6 +7,7 @@ import ViewLecture from './main/Component/ViewLecture'
 import Main from './main/Component/Main';
 import Footer from './main/Component/Footer';
 import ViewMember from './main/Component/ViewMember';
+import ViewLocker from './main/Component/ViewLocker';
 function App() {
    
     return(
@@ -17,6 +18,7 @@ function App() {
       <Route path="/view" element={<View />}></Route>
       <Route path="/viewLecture" element={<ViewLecture />}></Route>
       <Route path="/viewMember" element={<ViewMember />}></Route>
+      <Route path="/viewLocker" element={<ViewLocker />}></Route>
     </Routes>
     <Footer/>
     </BrowserRouter>

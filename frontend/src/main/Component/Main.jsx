@@ -7,6 +7,7 @@ export default function Main() {
     <ul>
     <li><Link to="/viewLecture">Show Lecture</Link></li>
     <li><Link to="/viewMember">Show Member</Link></li>
+    <li><Link to="/viewLocker">Using Locker list</Link></li>
     </ul>
     </>
   )
