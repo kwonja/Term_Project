@@ -1,0 +1,12 @@
+thead
+{
+  background-color: rgb(245,246,250);
+}
+tr{
+    border: 1px solid #E7E7E7;
+  }
+tbody tr:hover{
+    background : #66C6A3;
+    border: 1px solid #389774;
+    color: #FFFFFF;
+  }

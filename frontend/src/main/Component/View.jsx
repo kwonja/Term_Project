@@ -6,14 +6,14 @@ export default function View() {
     const handleOnclick = async(e)=>{
 
         const result = await axios.post(
-            'http://localhost/test/select.php');
+            'http://localhost/backend/select.php');
         console.log(result);
         setShow(true);
         setTable(result);
     }
   return (
     <>
-    <div onClick={handleOnclick}>조회</div>
+    <div onClick={handleOnclick}>마당booktable조회</div>
     {   show ? (<TableSet data={table1} />) : null}
     </>
   )

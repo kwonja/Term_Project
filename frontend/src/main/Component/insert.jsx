@@ -50,6 +50,7 @@ export default function Insert() {
 
     return(
         <>
+        <div>마당table에 데이터가 잘 들어가는지 확인</div>
     <form action="process_create.php" method="POST">
       <p><input type="text" name="bookid" placeholder="bookid" onChange={handleBook}/></p>
       <p><input type="text"name="bookname" placeholder="bookname" onChange={handleBookname}/></p>
