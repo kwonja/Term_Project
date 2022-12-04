@@ -40,7 +40,7 @@ export default function ViewMember() {
         const handleOnclick = async(e)=>{
 
             const result = await axios.post(
-                'http://localhost/backend/ViewMember.php');
+                'http://localhost/backend/ViewCenter.php');
             console.log(result);
             setShow(true);
             setTable(result);
@@ -49,7 +49,6 @@ export default function ViewMember() {
     },[])
   return (
     <>
-    
     {   show ? (<TableSet data={table1} />) : null}
     </>
   )
@@ -58,27 +57,21 @@ function TableSet(props){
     return(
         <>
         <Table border={1}>
-        <Caption>Member List</Caption>
+        <Caption>Center List</Caption>
             <thead>
                 <tr>
-                <Th>M_id</Th>
+                <Th>C_id</Th>
                 <Th>Name</Th>
-                <Th>Job</Th>
-                <Th>Phone Number</Th>
-                <Th>Bdate</Th>
-                <Th>Start_date</Th>
+                <Th>Tel</Th>
                 </tr>
             </thead>
             <tbody>
             { props.data.data.map( (x) =>(
                 (
                     <tr>
-                        <Td key={x.M_id}>{x.M_id}</Td>
+                        <Td key={x.C_id}>{x.C_id}</Td>
                         <Td>{x.Name}</Td>
-                        <Td>{x.Job}</Td>
-                        <Td>{x.Pnumber}</Td>
-                        <Td>{x.Bdate}</Td>
-                        <Td>{x.Start_date}</Td>
+                        <Td>{x.Tel}</Td>
                     </tr>
                 )
             ))}

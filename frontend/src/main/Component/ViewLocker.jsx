@@ -28,21 +28,28 @@ padding: 8px;
 font-weight: 300;
 font-size: 15px;
 ;`
+const Caption = styled.caption`
+font-size : 30px;
+color: #FF7759;
+padding : 5px;
+;`
 export default function ViewMember() {
     const [show,setShow]=useState(false);
     const [table1,setTable]=useState();
-    const handleOnclick = async(e)=>{
+    useEffect ( () =>{
+        const handleOnclick = async(e)=>{
 
-        const result = await axios.post(
-            'http://localhost/backend/ViewLocker.php');
-        console.log(result);
-        setShow(true);
-        setTable(result);
-    }
+            const result = await axios.post(
+                'http://localhost/backend/ViewLocker.php');
+            console.log(result);
+            setShow(true);
+            setTable(result);
+        }
+        handleOnclick();
+    },[])
   return (
     <>
-    <span>사용중인 라커룸 </span><button onClick={handleOnclick}>보기!</button><br/>
-    
+
     {   show ? (<TableSet data={table1} />) : null}
     </>
   )
@@ -51,6 +58,7 @@ function TableSet(props){
     return(
         <>
         <Table border={1}>
+        <Caption>Using Locker List</Caption>
             <thead>
                 <tr>
                 <Th>라커id</Th>
@@ -62,7 +70,7 @@ function TableSet(props){
             { props.data.data.map( (x) =>(
                 (
                     <tr>
-                        <Td key={x.L_id}>{x.L_id}</Td>
+                        <Td key={x.Locker_id}>{x.Locker_id}</Td>
                         <Td>{x.M_id}</Td>
                         <Td>{x.Password}</Td>
                     </tr>

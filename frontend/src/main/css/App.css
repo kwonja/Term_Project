@@ -10,3 +10,8 @@ tbody tr:hover{
     border: 1px solid #389774;
     color: #FFFFFF;
   }
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}

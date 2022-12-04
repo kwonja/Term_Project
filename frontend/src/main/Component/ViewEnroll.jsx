@@ -40,7 +40,7 @@ export default function ViewMember() {
         const handleOnclick = async(e)=>{
 
             const result = await axios.post(
-                'http://localhost/backend/ViewMember.php');
+                'http://localhost/backend/ViewEnroll.php');
             console.log(result);
             setShow(true);
             setTable(result);
@@ -58,15 +58,12 @@ function TableSet(props){
     return(
         <>
         <Table border={1}>
-        <Caption>Member List</Caption>
+        <Caption>Enroll List</Caption>
             <thead>
                 <tr>
                 <Th>M_id</Th>
-                <Th>Name</Th>
-                <Th>Job</Th>
-                <Th>Phone Number</Th>
-                <Th>Bdate</Th>
-                <Th>Start_date</Th>
+                <Th>L_id</Th>
+                <Th>가격</Th>
                 </tr>
             </thead>
             <tbody>
@@ -74,11 +71,8 @@ function TableSet(props){
                 (
                     <tr>
                         <Td key={x.M_id}>{x.M_id}</Td>
-                        <Td>{x.Name}</Td>
-                        <Td>{x.Job}</Td>
-                        <Td>{x.Pnumber}</Td>
-                        <Td>{x.Bdate}</Td>
-                        <Td>{x.Start_date}</Td>
+                        <Td>{x.L_id}</Td>
+                        <Td>{x.Price}</Td>
                     </tr>
                 )
             ))}

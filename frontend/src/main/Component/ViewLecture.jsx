@@ -28,21 +28,27 @@ padding: 8px;
 font-weight: 300;
 font-size: 15px;
 ;`
-
+const Caption = styled.caption`
+font-size : 30px;
+color: #FF7759;
+padding : 5px;
+;`
 export default function View() {
     const [show,setShow]=useState(false);
     const [table1,setTable]=useState();
-    const handleOnclick = async(e)=>{
 
-        const result = await axios.post(
-            'http://localhost/backend/ViewLecture.php');
-        console.log(result);
-        setShow(true);
-        setTable(result);
-    }
+    useEffect( () =>{
+        const handleOnclick = async(e)=>{
+
+            const result = await axios.post('http://localhost/backend/ViewLecture.php');
+            console.log(result);
+            setShow(true);
+            setTable(result);
+        }
+        handleOnclick();
+    },[])
   return (
     <>
-    <span>전체 강습보기</span><button onClick={handleOnclick}>클릭!</button><br/>
     
     {   show ? (<TableSet data={table1} />) : null}
     </>
@@ -53,6 +59,7 @@ function TableSet(props){
     return(
         <>
         <Table border={1}>
+            <Caption>Lecture List</Caption>
             <thead>
                 <tr>
                 <Th>L_id</Th>

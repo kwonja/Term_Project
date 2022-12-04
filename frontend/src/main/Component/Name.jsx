@@ -28,27 +28,20 @@ padding: 8px;
 font-weight: 300;
 font-size: 15px;
 ;`
-const Caption = styled.caption`
-font-size : 30px;
-color: #FF7759;
-padding : 5px;
-;`
 export default function ViewMember() {
     const [show,setShow]=useState(false);
     const [table1,setTable]=useState();
-    useEffect( () =>{
-        const handleOnclick = async(e)=>{
+    const handleOnclick = async(e)=>{
 
-            const result = await axios.post(
-                'http://localhost/backend/ViewMember.php');
-            console.log(result);
-            setShow(true);
-            setTable(result);
-        }
-        handleOnclick();
-    },[])
+        const result = await axios.post(
+            'http://localhost/backend/123.php');
+        console.log(result);
+        setShow(true);
+        setTable(result);
+    }
   return (
     <>
+    <span>김보라의 총 강의시간은?</span><button onClick={handleOnclick}>클릭!</button><br/>
     
     {   show ? (<TableSet data={table1} />) : null}
     </>
@@ -58,27 +51,18 @@ function TableSet(props){
     return(
         <>
         <Table border={1}>
-        <Caption>Member List</Caption>
             <thead>
                 <tr>
-                <Th>M_id</Th>
                 <Th>Name</Th>
-                <Th>Job</Th>
-                <Th>Phone Number</Th>
-                <Th>Bdate</Th>
-                <Th>Start_date</Th>
+                <Th>총강의시간</Th>
                 </tr>
             </thead>
             <tbody>
             { props.data.data.map( (x) =>(
                 (
                     <tr>
-                        <Td key={x.M_id}>{x.M_id}</Td>
                         <Td>{x.Name}</Td>
-                        <Td>{x.Job}</Td>
-                        <Td>{x.Pnumber}</Td>
-                        <Td>{x.Bdate}</Td>
-                        <Td>{x.Start_date}</Td>
+                        <Td>{x.Total}</Td>
                     </tr>
                 )
             ))}

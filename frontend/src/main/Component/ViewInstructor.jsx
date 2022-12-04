@@ -36,11 +36,11 @@ padding : 5px;
 export default function ViewMember() {
     const [show,setShow]=useState(false);
     const [table1,setTable]=useState();
-    useEffect( () =>{
+    useEffect( ()=>{
         const handleOnclick = async(e)=>{
 
             const result = await axios.post(
-                'http://localhost/backend/ViewMember.php');
+                'http://localhost/backend/ViewInstructor.php');
             console.log(result);
             setShow(true);
             setTable(result);
@@ -49,7 +49,6 @@ export default function ViewMember() {
     },[])
   return (
     <>
-    
     {   show ? (<TableSet data={table1} />) : null}
     </>
   )
@@ -58,27 +57,25 @@ function TableSet(props){
     return(
         <>
         <Table border={1}>
-        <Caption>Member List</Caption>
+        <Caption>Instructor List</Caption>
             <thead>
                 <tr>
-                <Th>M_id</Th>
+                <Th>I_id</Th>
                 <Th>Name</Th>
-                <Th>Job</Th>
-                <Th>Phone Number</Th>
-                <Th>Bdate</Th>
-                <Th>Start_date</Th>
+                <Th>Lecture</Th>
+                <Th>Year</Th>
+                <Th>Center</Th>
                 </tr>
             </thead>
             <tbody>
             { props.data.data.map( (x) =>(
                 (
                     <tr>
-                        <Td key={x.M_id}>{x.M_id}</Td>
+                        <Td key={x.I_id}>{x.I_id}</Td>
                         <Td>{x.Name}</Td>
-                        <Td>{x.Job}</Td>
-                        <Td>{x.Pnumber}</Td>
-                        <Td>{x.Bdate}</Td>
-                        <Td>{x.Start_date}</Td>
+                        <Td>{x.Lecture}</Td>
+                        <Td>{x.Year}</Td>
+                        <Td>{x.C_id}</Td>
                     </tr>
                 )
             ))}
