@@ -11,6 +11,7 @@ $sql = "
         '{$_POST['price']}'
     )
 ";
+
 $result = mysqli_query($conn, $sql);
 
 if($result === false){
