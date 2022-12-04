@@ -27,8 +27,10 @@ export default function Main() {
     <Li><Link to="/viewEnroll">4. Enroll List</Link></Li>
     <Li><Link to="/viewCenter">5. Center List</Link></Li>
     <Li><Link to="/viewInstructor">6. Instructor List</Link></Li>
-    <Li><Link to="/123">7. 김보라의 총 강의시간</Link></Li>
+    <Li><Link to="/Hours">7. Total hours of Kim Bo Ra</Link></Li>
     <Li><Link to="/MemberEnroll">8. Sign up</Link></Li>
+    <Li><Link to="/DeleteMember">9. Delete Member</Link></Li>
+    <Li><Link to="/UpdateMember">10.123123123</Link></Li>
     </Ul>
     </>
   )

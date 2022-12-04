@@ -82,16 +82,16 @@ export default function MemberEnroll() {
 
     return(
         <>
-    <Div>회원등록</Div>
+    <Div>Sign up</Div>
     <form action="MemberEnroll.php" method="POST">
-      <p><input type="text" name="Name" placeholder="Name" onChange={handleName}/></p>
-      <p><input type="text"name="Pnumber" placeholder="Pnumber" onChange={handlePnumber}/></p>
-      <p><input type="text"name="Job" placeholder="Job" onChange={handleJob}/></p>
-      <p><input type="text"name="Bdate" placeholder="Bdate" onChange={handleBdate}/></p>
-      <p><input type="text"name="Start_date" placeholder="Start_date" onChange={handleStart_date}/></p>
-      <p><input type="text"name="L_id" placeholder="Lecture Number" onChange={handleL_id}/></p>
-      <p><input type="text"name="Price" placeholder="Price" onChange={handlePrice}/></p>
-      <button onClick={handleSubmit} type="submit">제출</button>
+      <p><label for="Name">Name : </label><input type="text" name="Name" placeholder="Name" onChange={handleName}/></p>
+      <p><label for="Name">Pnumber : </label><input type="text"name="Pnumber" placeholder="Pnumber" onChange={handlePnumber}/></p>
+      <p><label for="Name">Job : </label><input type="text"name="Job" placeholder="Job" onChange={handleJob}/></p>
+      <p><label for="Name">Bdate : </label><input type="text"name="Bdate" placeholder="Bdate" onChange={handleBdate}/></p>
+      <p><label for="Name">Start_date : </label><input type="text"name="Start_date" placeholder="Start_date" onChange={handleStart_date}/></p>
+      <p><label for="Name">Lecture(Write Lecture_id) : </label><input type="text"name="L_id" placeholder="Lecture Number" onChange={handleL_id}/></p>
+      <p><label for="Name">Price </label><input type="text"name="Price" placeholder="Price" onChange={handlePrice}/></p>
+      <button onClick={handleSubmit} type="submit">Submit</button>
     </form>
         </>
     
