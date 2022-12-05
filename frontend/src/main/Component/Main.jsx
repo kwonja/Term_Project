@@ -33,6 +33,7 @@ export default function Main() {
     <Li><Link to="/MemberLecturePrice">10. Total price of Lecture enrolled by members</Link></Li>
     <Li><Link to="/Lecture_time">11. Time for lectures enrolled by Kim Kakao</Link></Li>
     <Li><Link to="/Certificate">12. Certificate of Kwon sung min </Link></Li>
+    <Li><Link to="/UpdateYear">13. Update Year about Kim Bo Ra </Link></Li>
     </Ul>
     </>
   )

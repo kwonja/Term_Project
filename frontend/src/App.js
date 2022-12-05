@@ -14,10 +14,13 @@ import DeleteMember from './main/Component/DeleteMember';
 import MemberLecturePrice from './main/Component/MemberLecturePrice';
 import Lecturetime from './main/Component/Lecture_time';
 import Certificate from './main/Component/Certificate';
+import UpdateYear from './main/Component/UpdateYear';
+import Banner from './main/Component/Banner';
 function App() {
    
     return(
         <BrowserRouter>
+        <Banner/>
     <Routes>
       <Route path="/" element={<Main/>}></Route>
       <Route path="/viewLecture" element={<ViewLecture />}></Route>
@@ -32,6 +35,7 @@ function App() {
       <Route path="/MemberLecturePrice" element={<MemberLecturePrice />}></Route>
       <Route path="/Lecture_time" element={<Lecturetime/>}></Route>
       <Route path="/Certificate" element={<Certificate/>}></Route>
+      <Route path="/UpdateYear" element={<UpdateYear/>}></Route>
     </Routes>
     <Footer/>
     </BrowserRouter>
