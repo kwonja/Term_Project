@@ -28,20 +28,22 @@ padding: 8px;
 font-weight: 300;
 font-size: 15px;
 ;`
-export default function ViewMember() {
+export default function MemberLecturePrice() {
     const [show,setShow]=useState(false);
     const [table1,setTable]=useState();
-    const handleOnclick = async(e)=>{
+    useEffect( () =>{
+        const handleOnclick = async(e)=>{
 
-        const result = await axios.post(
-            'http://localhost/backend/123.php');
-        console.log(result);
-        setShow(true);
-        setTable(result);
-    }
+            const result = await axios.post(
+                'http://localhost/backend/MemberLecturePrice.php');
+            console.log(result);
+            setShow(true);
+            setTable(result);
+        }
+        handleOnclick();
+    },[])
   return (
     <>
-    <span>김보라의 총 강의시간은?</span><button onClick={handleOnclick}>클릭!</button><br/>
     
     {   show ? (<TableSet data={table1} />) : null}
     </>
@@ -53,8 +55,8 @@ function TableSet(props){
         <Table border={1}>
             <thead>
                 <tr>
-                <Th>Name</Th>
-                <Th>총강의시간</Th>
+                <Th>Member_id</Th>
+                <Th>Total Price</Th>
                 </tr>
             </thead>
             <tbody>
@@ -62,7 +64,7 @@ function TableSet(props){
                 (
                     <tr>
                         <Td>{x.Name}</Td>
-                        <Td>{x.Total}</Td>
+                        <Td>{x.TotalPrice}</Td>
                     </tr>
                 )
             ))}

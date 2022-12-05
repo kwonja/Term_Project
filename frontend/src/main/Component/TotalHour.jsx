@@ -28,11 +28,6 @@ padding: 8px;
 font-weight: 300;
 font-size: 15px;
 ;`
-const Caption = styled.caption`
-font-size : 30px;
-color: #FF7759;
-padding : 5px;
-;`
 export default function ViewMember() {
     const [show,setShow]=useState(false);
     const [table1,setTable]=useState();
@@ -40,7 +35,7 @@ export default function ViewMember() {
         const handleOnclick = async(e)=>{
 
             const result = await axios.post(
-                'http://localhost/backend/ViewEnroll.php');
+                'http://localhost/backend/TotalHour.php');
             console.log(result);
             setShow(true);
             setTable(result);
@@ -58,23 +53,18 @@ function TableSet(props){
     return(
         <>
         <Table border={1}>
-        <Caption>Enroll List</Caption>
             <thead>
                 <tr>
-                <Th>Member</Th>
-                <Th>Lecture_id</Th>
-                <Th>Lecture</Th>
-                <Th>Price</Th>
+                <Th>Name</Th>
+                <Th>총강의시간</Th>
                 </tr>
             </thead>
             <tbody>
             { props.data.data.map( (x) =>(
                 (
                     <tr>
-                        <Td>{x.Membername}</Td>
-                        <Td>{x.L_id}</Td>
-                        <Td>{x.Lecturename}</Td>
-                        <Td>{x.Price}</Td>
+                        <Td>{x.Name}</Td>
+                        <Td>{x.Total}</Td>
                     </tr>
                 )
             ))}

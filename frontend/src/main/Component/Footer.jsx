@@ -20,7 +20,7 @@ export default function Footer() {
   return (
     <Ul>
     <Li></Li>
-    <Li><Link to="/">홈으로 돌아가기</Link></Li>
+    <Li><Link to="/">Back to Home</Link></Li>
     </Ul>
   )
 }

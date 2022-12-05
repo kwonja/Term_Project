@@ -57,8 +57,7 @@ export default function MemberEnroll() {
         Reigster.append("Start_date",Start_date);
         Reigster.append("Pnumber",Pnumber);
         Reigster.append("L_id",L_id);
-        Reigster.append("Locker_id",M_id);
-        Reigster.append("Password",'1234');
+        Reigster.append("Password",1234);
         Reigster.append("Price",Price);
         console.log(Reigster);
         // FormData의 값 확인

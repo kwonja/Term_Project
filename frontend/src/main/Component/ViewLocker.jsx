@@ -62,7 +62,7 @@ function TableSet(props){
             <thead>
                 <tr>
                 <Th>라커id</Th>
-                <Th>회원id</Th>
+                <Th>이름</Th>
                 <Th>비밀번호</Th>
                 </tr>
             </thead>
@@ -71,7 +71,7 @@ function TableSet(props){
                 (
                     <tr>
                         <Td key={x.Locker_id}>{x.Locker_id}</Td>
-                        <Td>{x.M_id}</Td>
+                        <Td>{x.Name}</Td>
                         <Td>{x.Password}</Td>
                     </tr>
                 )

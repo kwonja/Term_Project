@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {BrowserRouter,Route,Routes} from "react-router-dom";
-import axios from 'axios';
-import Insert from './main/Component/insert';
-import View from './main/Component/View';
 import ViewLecture from './main/Component/ViewLecture'
 import Main from './main/Component/Main';
 import Footer from './main/Component/Footer';
@@ -12,17 +9,15 @@ import ViewEnroll from './main/Component/ViewEnroll';
 import ViewCenter from './main/Component/ViewCenter';
 import ViewInstructor from './main/Component/ViewInstructor';
 import MemberEnroll from './main/Component/MemberEnroll';
-import Name from './main/Component/Name';
+import TotalHour from './main/Component/TotalHour';
 import DeleteMember from './main/Component/DeleteMember';
-import UpdateMember from './main/Component/UpdateMember';
+import MemberLecturePrice from './main/Component/MemberLecturePrice';
 function App() {
    
     return(
         <BrowserRouter>
     <Routes>
       <Route path="/" element={<Main/>}></Route>
-      <Route path="/insert" element={<Insert />}></Route>
-      <Route path="/view" element={<View />}></Route>
       <Route path="/viewLecture" element={<ViewLecture />}></Route>
       <Route path="/viewMember" element={<ViewMember />}></Route>
       <Route path="/viewLocker" element={<ViewLocker />}></Route>
@@ -31,7 +26,8 @@ function App() {
       <Route path="/viewInstructor" element={<ViewInstructor />}></Route>
       <Route path="/MemberEnroll" element={<MemberEnroll />}></Route>
       <Route path="/DeleteMember" element={<DeleteMember />}></Route>
-      <Route path="/Hours" element={<Name />}></Route>
+      <Route path="/TotalHour" element={<TotalHour />}></Route>
+      <Route path="/MemberLecturePrice" element={<MemberLecturePrice />}></Route>
     </Routes>
     <Footer/>
     </BrowserRouter>
