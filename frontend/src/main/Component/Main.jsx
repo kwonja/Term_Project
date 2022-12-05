@@ -5,7 +5,7 @@ import '../css/App.css';
 
 const Ul = styled.ul`
 list-style:none;
-width : 50%;
+width : 80%;
 display : flex;
 flex-wrap: wrap;
 `;
@@ -31,6 +31,8 @@ export default function Main() {
     <Li><Link to="/MemberEnroll">8. Sign up</Link></Li>
     <Li><Link to="/DeleteMember">9. Delete Member</Link></Li>
     <Li><Link to="/MemberLecturePrice">10. Total price of Lecture enrolled by members</Link></Li>
+    <Li><Link to="/Lecture_time">11. Time for lectures enrolled by Kim Kakao</Link></Li>
+    <Li><Link to="/Certificate">12. Certificate of Kwon sung min </Link></Li>
     </Ul>
     </>
   )

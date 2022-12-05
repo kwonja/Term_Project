@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Ul = styled.ul`
 list-style:none;
-width : 50%;
+width : 80%;
 display : flex;
 flex-wrap: wrap;
 `;

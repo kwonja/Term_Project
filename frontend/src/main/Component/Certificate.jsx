@@ -33,52 +33,23 @@ font-size : 30px;
 color: #FF7759;
 padding : 5px;
 ;`
-const Div = styled.span`
-font-size : 30px;
-color: #FF7759;
-`;
-export default function DeleteMember() {
+export default function ViewMember() {
     const [show,setShow]=useState(false);
-    const [table1,setTable]=useState();    
-    const [M_id,setM_id]=useState(0);
+    const [table1,setTable]=useState();
     useEffect( () =>{
         const handleOnclick = async(e)=>{
 
             const result = await axios.post(
-                'http://localhost/backend/ViewMember.php');
+                'http://localhost/backend/Certificate.php');
             console.log(result);
             setShow(true);
             setTable(result);
         }
         handleOnclick();
     },[])
-
-    const handleM_id = (e)=>{
-        setM_id(e.target.value);
-    }
-    const handleSumbit = async(e)=>{
-        e.preventDefault();
-        const Reigster = new FormData();
-        Reigster.append("M_id",M_id);
-        console.log(M_id);
-        try{
-            await axios(
-                {
-                    method : "POST",
-                    url : "http://localhost/backend/DeleteMember.php",
-                    data : Reigster,
-                    headers : {"Content-Type" : "multipart/form-data",},
-                });
-                window.location.href="/";
-        }catch(error){
-            console.log(error);
-        }
-    }
   return (
     <>
     
-    <Div>Input M_id for Delete</Div><span>(input number which is not in table, Not Delete)</span><br/>
-    <input type="text" name="M" onChange={handleM_id}/> <button onClick={handleSumbit}>삭제하기</button>
     {   show ? (<TableSet data={table1} />) : null}
     </>
   )
@@ -87,27 +58,18 @@ function TableSet(props){
     return(
         <>
         <Table border={1}>
-        <Caption>Member Delete</Caption>
             <thead>
                 <tr>
-                <Th>M_id</Th>
                 <Th>Name</Th>
-                <Th>Job</Th>
-                <Th>Phone Number</Th>
-                <Th>Bdate</Th>
-                <Th>Start_date</Th>
+                <Th>Certificate</Th>
                 </tr>
             </thead>
             <tbody>
             { props.data.data.map( (x) =>(
                 (
                     <tr>
-                        <Td key={x.M_id}>{x.M_id}</Td>
                         <Td>{x.Name}</Td>
-                        <Td>{x.Job}</Td>
-                        <Td>{x.Pnumber}</Td>
-                        <Td>{x.Bdate}</Td>
-                        <Td>{x.Start_date}</Td>
+                        <Td>{x.Certificate}</Td>
                     </tr>
                 )
             ))}

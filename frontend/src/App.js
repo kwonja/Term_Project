@@ -12,6 +12,8 @@ import MemberEnroll from './main/Component/MemberEnroll';
 import TotalHour from './main/Component/TotalHour';
 import DeleteMember from './main/Component/DeleteMember';
 import MemberLecturePrice from './main/Component/MemberLecturePrice';
+import Lecturetime from './main/Component/Lecture_time';
+import Certificate from './main/Component/Certificate';
 function App() {
    
     return(
@@ -28,6 +30,8 @@ function App() {
       <Route path="/DeleteMember" element={<DeleteMember />}></Route>
       <Route path="/TotalHour" element={<TotalHour />}></Route>
       <Route path="/MemberLecturePrice" element={<MemberLecturePrice />}></Route>
+      <Route path="/Lecture_time" element={<Lecturetime/>}></Route>
+      <Route path="/Certificate" element={<Certificate/>}></Route>
     </Routes>
     <Footer/>
     </BrowserRouter>
