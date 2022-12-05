@@ -6,9 +6,8 @@ echo `{$_POST['M_id']}`;
 
 $sql = "
   INSERT INTO Member
-    (M_id,Name,Job,Pnumber,Bdate,Start_date)
+    (Name,Job,Pnumber,Bdate,Start_date)
     VALUE(
-        '{$_POST['M_id']}',
         '{$_POST['Name']}',
         '{$_POST['Job']}',
         '{$_POST['Pnumber']}',
@@ -17,9 +16,8 @@ $sql = "
         
     );
     INSERT INTO Locker
-    (Locker_id,M_id,Password)
+    (M_id,Password)
     VALUE(
-        '{$_POST['Locker_id']}',
         '{$_POST['M_id']}',
         '{$_POST['Password']}'
     );

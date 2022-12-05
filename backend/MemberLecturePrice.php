@@ -2,9 +2,10 @@
 header('Access-Control-Allow-Origin: http://localhost:3000');
 
 $conn = mysqli_connect("192.168.100.3","kwonsungmin","1234","term_project",4567);
-$sql = "select M.Name Membername, L.L_id, L.Name Lecturename,E.Price
-from Lecture AS L, Member AS M, Enroll AS E
-where E.M_id=M.M_id AND E.L_id=L.L_id";
+$sql = "select M.Name , SUM(E.Price) AS TotalPrice
+from Member AS M, Lecture AS L,Enroll  AS E
+where M.M_id=E.M_id AND L.L_id=E.L_id
+GROUP BY M.Name";
 $result = mysqli_query($conn, $sql);
 // var_dump($result->num_rows);
 $myArray = array();

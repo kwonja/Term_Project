@@ -2,7 +2,9 @@
 header('Access-Control-Allow-Origin: http://localhost:3000');
 
 $conn = mysqli_connect("192.168.100.3","kwonsungmin","1234","term_project",4567);
-$sql = "SELECT * FROM Locker";
+$sql = "select L.Locker_id,M.Name,L.Password
+from Locker AS L, Member AS M
+where L.M_id=M.M_id";
 $result = mysqli_query($conn, $sql);
 // var_dump($result->num_rows);
 $myArray = array();
